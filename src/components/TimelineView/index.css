@@ -1,1 +1,5 @@
 /* Write your CSS here */
+.chrono-container {
+  width: 100%;
+  height: 100vh;
+}
