@@ -1,1 +1,50 @@
-/* Write your CSS here */
+/* Styling Project card */
+
+.project-card {
+  font-family: 'Roboto';
+  display: flex;
+  flex-direction: column;
+}
+
+/* Styling image */
+.project-image {
+  max-width: 450px;
+  height: auto;
+}
+
+/* Styling Title and Duration card */
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 4px;
+}
+.project-title {
+  margin: 0;
+  color: #1e293b;
+}
+.project-duration {
+  display: flex;
+  align-items: center;
+  gap: 1.9px;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+/* Styling Project description */
+.project-description {
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 4px;
+}
+
+/* Styling anchor tag */
+a {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+}

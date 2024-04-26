@@ -1,5 +1,5 @@
 // importing Icons
-import {BsClockFill} from 'react-icons/bs'
+import {AiFillClockCircle} from 'react-icons/ai'
 
 // importing styling from css file
 import './index.css'
@@ -23,7 +23,7 @@ const CourseTimelineCard = props => {
       <div className="course-title-duration">
         <h2 className="course-title">{courseTitle}</h2>
         <p className="course-duration">
-          <BsClockFill />
+          <AiFillClockCircle />
           {duration}
         </p>
       </div>

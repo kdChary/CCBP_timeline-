@@ -3,26 +3,35 @@ import {Chrono} from 'react-chrono'
 
 import './index.css'
 import CourseTimelineCard from '../CourseTimelineCard'
+import ProjectTimelineCard from '../ProjectTimelineCard'
 
 const TimelineView = props => {
   const {timelineItemsList} = props
-  const courseList = timelineItemsList.filter(
-    item => item.categoryId === 'COURSE',
-  )
-  const projectsList = timelineItemsList.filter(
-    item => item.categoryId === 'PROJECT',
-  )
-  const titles = timelineItemsList.map(item => ({title: item.title}))
 
-  console.log(courseList, projectsList)
+  const renderTimeline = item => {
+    if (item.categoryId === 'COURSE') {
+      return <CourseTimelineCard key={item.id} course={item} />
+    }
+    return <ProjectTimelineCard key={item.id} project={item} />
+  }
 
   return (
     <div className="chrono-container">
-      <Chrono mode="VERTICAL_ALTERNATING" items={titles}>
-        {courseList.map(courses => (
-          <CourseTimelineCard key={courses.id} course={courses} />
-        ))}
-        <p>Hello2</p>
+      <div className="timeline-header">
+        <h3 className="title-tag">MY JOURNEY OF</h3>
+        <h2 className="title">CCBP 4.0</h2>
+      </div>
+      <Chrono
+        mode="VERTICAL_ALTERNATING"
+        items={timelineItemsList}
+        theme={{
+          primary: '#0967d2',
+          secondary: '#ffffff',
+          cardBgColor: '#ffffff',
+          titleColor: '#0967d2',
+        }}
+      >
+        {timelineItemsList.map(item => renderTimeline(item))}
       </Chrono>
     </div>
   )
